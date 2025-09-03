@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './App.module.css';
 import QuestionCard from './components/QuestionCard/QuestionCard';
 import { triviaQuestions } from './data/triviaData';
+import ResultsScreen from './components/screens/ResultsScreen/ResultsScreen';
 
 function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -24,6 +25,10 @@ function App() {
       const finalScore = isCorrect ? score + 1 : score;
       console.log(`End of the quiz! Final score: ${finalScore}`);
     }
+  };
+
+  const handleRestart = () => {
+    console.log('Restarting quiz!');
   };
 
   return (
