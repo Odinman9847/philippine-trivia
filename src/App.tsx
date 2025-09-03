@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import QuestionCard from './components/QuestionCard/QuestionCard';
 import { triviaQuestions } from './data/triviaData';
 import ResultsScreen from './components/screens/ResultsScreen/ResultsScreen';
+import WelcomeScreen from './components/screens/WelcomeScreen/WelcomeScreen';
 
 function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -29,6 +30,10 @@ function App() {
 
   const handleRestart = () => {
     console.log('Restarting quiz!');
+  };
+
+  const handleStart = () => {
+    console.log('Starting quiz!');
   };
 
   return (
