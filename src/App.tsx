@@ -4,8 +4,8 @@ import QuestionCard from './components/QuestionCard/QuestionCard';
 import { triviaQuestions } from './data/triviaData';
 
 function App() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+  const [score, setScore] = useState<number>(0);
 
   const currentQuestion = triviaQuestions[currentQuestionIndex];
 
@@ -29,7 +29,12 @@ function App() {
   return (
     <main className={styles.appWrapper}>
       <h1 className={styles.title}>Philippine Trivia</h1>
-      <QuestionCard question={currentQuestion} onAnswerSubmit={handleAnswer} />
+      <div className={styles.gameContainer}>
+        <QuestionCard
+          question={currentQuestion}
+          onAnswerSubmit={handleAnswer}
+        />
+      </div>
     </main>
   );
 }

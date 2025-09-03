@@ -14,3 +14,8 @@
   margin-bottom: 1rem;
   text-align: center;
 }
+
+.gameContainer {
+  width: 100%;
+  max-width: 650px;
+}

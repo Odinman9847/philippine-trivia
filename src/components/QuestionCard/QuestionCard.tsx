@@ -10,7 +10,9 @@ interface QuestionCardProps {
 const QuestionCard = ({ question, onAnswerSubmit }: QuestionCardProps) => {
   return (
     <div className={styles.card}>
-      <h2 className={styles.questionText}>{question.questionText}</h2>
+      <h2 className={styles.questionText}>
+        <span>{question.questionText}</span>
+      </h2>
       <div className={styles.optionsGrid}>
         {question.options.map((optionText, index) => (
           <AnswerButton

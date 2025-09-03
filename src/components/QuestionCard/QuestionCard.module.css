@@ -14,10 +14,16 @@
   font-size: 1.75rem;
   text-align: center;
   margin-bottom: 2rem;
+
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
 }
 
 .optionsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
