@@ -1,16 +1,34 @@
+import { useState } from 'react';
+import styles from './App.module.css';
 import QuestionCard from './components/QuestionCard/QuestionCard';
 import { triviaQuestions } from './data/triviaData';
 
 function App() {
-  const currentQuestion = triviaQuestions[0];
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+
+  const currentQuestion = triviaQuestions[currentQuestionIndex];
+
   const handleAnswer = (selectedIndex: number) => {
-    console.log('User selected answer index:', selectedIndex);
-    console.log('Correct answer index is:', currentQuestion.correctAnswerIndex);
+    let isCorrect = selectedIndex === currentQuestion.correctAnswerIndex;
+
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+
+    const nextQuestionIndex = currentQuestionIndex + 1;
+
+    if (nextQuestionIndex < triviaQuestions.length) {
+      setCurrentQuestionIndex(nextQuestionIndex);
+    } else {
+      const finalScore = isCorrect ? score + 1 : score;
+      console.log(`End of the quiz! Final score: ${finalScore}`);
+    }
   };
 
   return (
-    <main>
-      <h1>Philippine Trivia</h1>
+    <main className={styles.appWrapper}>
+      <h1 className={styles.title}>Philippine Trivia</h1>
       <QuestionCard question={currentQuestion} onAnswerSubmit={handleAnswer} />
     </main>
   );
