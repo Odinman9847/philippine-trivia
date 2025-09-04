@@ -18,11 +18,28 @@
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-.button:hover {
-  /*background-color: #d9534f;*/
-}
-
 .button:active {
   transform: translateY(3px);
   box-shadow: 0 2px 0 #a0323d;
+}
+
+.button:disabled {
+  background-color: #9e9e9e;
+  box-shadow: 0 5px 0 #757575;
+  cursor: not-allowed;
+}
+
+.correct:disabled {
+  background-color: #58b568;
+  box-shadow: 0 5px 0 #469153;
+}
+
+.incorrect:disabled {
+  background-color: #d9534f;
+  box-shadow: 0 5px #ac423e;
+}
+
+.button:disabled:active {
+  transform: none;
+  box-shadow: 0 5px 0 #757575;
 }

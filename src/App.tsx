@@ -11,10 +11,15 @@ function App() {
   const [gameState, setGameState] = useState<GameState>('welcome');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
+    null
+  );
+  const currentQuestion = triviaQuestions[currentQuestionIndex];
 
   const handleStart = () => {
     setScore(0);
     setCurrentQuestionIndex(0);
+    setSelectedAnswerIndex(null);
     setGameState('playing');
   };
 
@@ -22,19 +27,23 @@ function App() {
     setGameState('welcome');
   };
 
-  const currentQuestion = triviaQuestions[currentQuestionIndex];
-
   const handleAnswer = (selectedIndex: number) => {
+    if (selectedAnswerIndex !== null) return;
+
     let isCorrect = selectedIndex === currentQuestion.correctAnswerIndex;
 
     if (isCorrect) {
       setScore((prevScore) => prevScore + 1);
     }
 
-    const nextQuestionIndex = currentQuestionIndex + 1;
+    setSelectedAnswerIndex(selectedIndex);
+  };
 
+  const handleNext = () => {
+    const nextQuestionIndex = currentQuestionIndex + 1;
     if (nextQuestionIndex < triviaQuestions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
+      setSelectedAnswerIndex(null);
     } else {
       setGameState('results');
     }
@@ -49,6 +58,8 @@ function App() {
           <QuestionCard
             question={currentQuestion}
             onAnswerSubmit={handleAnswer}
+            selectedAnswerIndex={selectedAnswerIndex}
+            onNext={handleNext}
           />
         )}
         {gameState === 'results' && (

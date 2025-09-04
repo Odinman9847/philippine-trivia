@@ -27,3 +27,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+
+.nextButtonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.nextButton {
+  width: 100%;
+  max-width: 250px;
+}
