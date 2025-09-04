@@ -25,7 +25,7 @@ const ResultsScreen = ({
       <h2 className={styles.title}>Quiz Complete!</h2>
       <h3 className={styles.rank}>{getRank()}</h3>
       <p className={styles.score}>
-        Your Score: <span>{score}</span>/{totalQuestions}
+        Your Score: {score}/{totalQuestions}
       </p>
       <AnswerButton
         text="Play Again"
