@@ -93,6 +93,8 @@ function App() {
             onAnswerSubmit={handleAnswer}
             selectedAnswerIndex={selectedAnswerIndex}
             onNext={handleNext}
+            currentQuestionNumber={currentQuestionIndex + 1}
+            totalQuestions={activeQuiz.length}
           />
         )}
         {gameState === 'results' && (

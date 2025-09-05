@@ -8,6 +8,8 @@ interface QuestionCardProps {
   selectedAnswerIndex: number | null;
   onAnswerSubmit: (selectedAnswerIndex: number) => void;
   onNext: () => void;
+  currentQuestionNumber: number;
+  totalQuestions: number;
 }
 
 const QuestionCard = ({
@@ -15,11 +17,16 @@ const QuestionCard = ({
   selectedAnswerIndex,
   onAnswerSubmit,
   onNext,
+  currentQuestionNumber,
+  totalQuestions,
 }: QuestionCardProps) => {
   const isAnswered = selectedAnswerIndex != null;
 
   return (
     <div className={styles.card}>
+      <p className={styles.progressIndicator}>
+        Question {currentQuestionNumber}/{totalQuestions}
+      </p>
       <h2 className={styles.questionText}>
         <span>{question.questionText}</span>
       </h2>
