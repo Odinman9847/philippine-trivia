@@ -4,7 +4,7 @@ A fun, interactive trivia game built with React and TypeScript, designed to test
 
 ## Live Demo
 
-[**Play the game here!**](https://your-vercel-url.vercel.app)
+[**Play the game here!**](https://philippine-trivia.vercel.app)
 
 ## Screenshot
 
