@@ -54,18 +54,16 @@
   color: #2c3a61;
   box-shadow: 0 4px 0 #6e8cb3;
 
-  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out,
+    background-color 0.2s ease, color 0.2s ease;
 }
 
 .categoryButton:not(.selected):hover {
-  background-color: #b5c9e9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #6e8cb3;
 }
 
-.selected:hover {
-  background-color: #d9534f;
-}
-
-.categoryButton:active {
+.categoryButton:not(.selected):active {
   transform: translateY(2px);
   box-shadow: 0 2px 0 #6e8cb3;
 }
@@ -76,6 +74,12 @@
   box-shadow: 0 4px 0 #a0323d;
 }
 
+.selected:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #a0323d;
+}
+
 .selected:active {
+  transform: translateY(2px);
   box-shadow: 0 2px 0 #a0323d;
 }
