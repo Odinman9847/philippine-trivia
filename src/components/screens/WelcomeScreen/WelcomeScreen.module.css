@@ -57,8 +57,12 @@
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-.categoryButton:hover {
+.categoryButton:not(.selected):hover {
   background-color: #b5c9e9;
+}
+
+.selected:hover {
+  background-color: #d9534f;
 }
 
 .categoryButton:active {
