@@ -31,3 +31,47 @@
   max-width: 300px;
   margin-top: 1rem;
 }
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  max-width: 450px;
+}
+
+.categoryButton {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background-color: #a4bde4;
+  color: #2c3a61;
+  box-shadow: 0 4px 0 #6e8cb3;
+
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.categoryButton:hover {
+  background-color: #b5c9e9;
+}
+
+.categoryButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #6e8cb3;
+}
+
+.selected {
+  background-color: #c83e4d;
+  color: white;
+  box-shadow: 0 4px 0 #a0323d;
+}
+
+.selected:active {
+  box-shadow: 0 2px 0 #a0323d;
+}
